@@ -1,14 +1,19 @@
 mod utils;
 
-use utils::terminal::{limpar_tela,esperar_enter};
+// Importando as funções do seu módulo terminal
+use utils::terminal::{esperar_enter, exibir_menu};
+
 fn main() {
-    println!("Maskrenhas Dev");
-     println!("Maskrenhas Dev");
-      println!("Maskrenhas Dev");
-       println!("Maskrenhas Dev");
-        println!("Maskrenhas Dev");
-         println!("Maskrenhas Dev");
-         esperar_enter();
-         limpar_tela();
-          println!("Maskrenhas Dev");
+    // Removi o ": [&str; 5]" para o Rust inferir o tamanho automaticamente
+    let itens = [
+        "Fundamentos", 
+        "Tipos", 
+        "Controle", 
+        "Funções", 
+        "Ownership"
+    ]; 
+
+    // Note que agora passei 5 itens para combinar com o que você queria
+    exibir_menu("Principal", &itens, true);
+    esperar_enter();
 }
