@@ -12,8 +12,9 @@ fn main() {
         "Funções", 
         "Ownership"
     ]; 
-
+  
     // Note que agora passei 5 itens para combinar com o que você queria
-    exibir_menu("Principal", &itens, true);
+    
+ let _selecionado = exibir_menu("Principal", &itens, true);
     esperar_enter();
 }

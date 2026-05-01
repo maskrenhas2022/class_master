@@ -1,6 +1,8 @@
+use std::io::Write;
+
 use rpassword::prompt_password;
 
-pub fn exibir_menu(titulo: &str, itens: &[&str], _sair: bool)-> u32{
+ pub fn exibir_menu(titulo: &str, itens: &[&str], sair: bool)-> u32{
     limpar_tela();
 
     let completo: String= String::from("ClassMaster Rust::") + titulo;
@@ -8,8 +10,18 @@ pub fn exibir_menu(titulo: &str, itens: &[&str], _sair: bool)-> u32{
     println!("{}", completo);
     println!("{}", String::from("=").repeat(completo.len()));  
 
+
+
     exibir_itens(itens);
 
+  println!("{}", if sair {"* - Sair" } else { "* - Voltar" });
+  print! ("\nEscolha uma opcão: ");
+
+  std::io::stdout().flush().unwrap();
+
+ let mut linha: String = String::new();
+
+  std::io::stdin().read_line(&mut linha).unwrap();  
     return 10;
 }
 
