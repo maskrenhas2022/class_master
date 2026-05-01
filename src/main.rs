@@ -4,7 +4,10 @@ mod utils;
 use utils::terminal::{esperar_enter, exibir_menu};
 
 fn main() {
-    // Removi o ": [&str; 5]" para o Rust inferir o tamanho automaticamente
+
+     loop {
+         
+         // Removi o ": [&str; 5]" para o Rust inferir o tamanho automaticamente
     let itens = [
         "Fundamentos", 
         "Tipos", 
@@ -18,3 +21,12 @@ fn main() {
  let _selecionado = exibir_menu("Principal", &itens, true);
     esperar_enter();
 }
+
+
+     }
+
+
+
+
+
+    

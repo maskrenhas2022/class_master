@@ -19,10 +19,24 @@ use rpassword::prompt_password;
 
   std::io::stdout().flush().unwrap();
 
- let mut linha: String = String::new();
 
-  std::io::stdin().read_line(&mut linha).unwrap();  
-    return 10;
+
+ let mut linha: String = String::new();
+ std::io::stdin().read_line(&mut linha).unwrap();  
+   
+   let opcao:Result<u32, _>= linha.trim().parse();
+
+   match opcao {
+
+    Ok(opcao) => opcao,
+
+    _ => 0,
+       
+   }
+
+
+
+    
 }
 
 
